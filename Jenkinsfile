@@ -6,7 +6,7 @@
 
 // Configure these properties
 projectDir = 'collectd-rabbitmq'
-projectRepoURL = 'git@github.com:gumtreeuk/collectd-rabbitmq.git'
+projectRepoURL = 'https://github.com/gumtreeuk/collectd-rabbitmq.git'
 debName = 'collectd-rabbitmq'
 projectBranch = env.JOB_NAME.replaceFirst('.+/', '')
 architecture = "all"
