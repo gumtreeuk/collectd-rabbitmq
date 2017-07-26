@@ -1,11 +1,11 @@
-Source: consulsync
+Source: collectd-rabbitmq
 Section: python
 Priority: extra
 Maintainer: Gumtree SiteOps <ops@gumtree.com>
 Build-Depends: debhelper (>= 9), python, dh-virtualenv, python-dev, python-distutils-extra, python-apt-dev
 Standards-Version: 3.9.5
 
-Package: consulsync
+Package: collectd-rabbitmq
 Architecture: all
 Depends: python-apt, python-requests
 Description: Syncs keys and values in Consul
