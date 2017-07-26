@@ -14,27 +14,25 @@ architecture = "all"
 
 node {
 
-    withGit {
 
-        withPython {
+    withPython {
 
-            checkoutProject(projectDir, projectRepoURL, projectBranch)
-            dir(projectDir) {
-                version = getVersionFromPythonSetupTools()
+        checkoutProject(projectDir, projectRepoURL, projectBranch)
+        dir(projectDir) {
+            version = getVersionFromPythonSetupTools()
 
-                cleanPythonWorkspace()
-                stage 'Test'
-                runPythonTests()
-                stage 'Devpi Upload'
-                uploadPython()
-                stage 'Build Debian Package'
-                buildDebian(debName, version)
-                stage 'Aptly Upload'
-                uploadDebianToStaging(debName, version, architecture, "..")
-                if (projectBranch == globals.releaseBranch) {
-                    stage 'Production Upload'
-                    uploadDebianToProduction(debName, version, architecture, "..")
-                }
+            cleanPythonWorkspace()
+            stage 'Test'
+            runPythonTests()
+            stage 'Devpi Upload'
+            uploadPython()
+            stage 'Build Debian Package'
+            buildDebian(debName, version)
+            stage 'Aptly Upload'
+            uploadDebianToStaging(debName, version, architecture, "..")
+            if (projectBranch == globals.releaseBranch) {
+                stage 'Production Upload'
+                uploadDebianToProduction(debName, version, architecture, "..")
             }
         }
     }
