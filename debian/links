@@ -1,0 +1,3 @@
+opt/venvs/consulsync/bin/consul-sync usr/bin/consul-sync
+opt/venvs/consulsync/bin/consul-gitsync usr/bin/consul-gitsync
+opt/venvs/consulsync/bin/consul-gtsync usr/bin/consul-gtsync

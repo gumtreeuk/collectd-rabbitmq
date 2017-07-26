@@ -1,0 +1,7 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --with python-virtualenv
+
+override_dh_virtualenv:
+	dh_virtualenv --use-system-packages --index-url='https://devpi.ci.gt.ecg.so/siteops/stable/+simple'
